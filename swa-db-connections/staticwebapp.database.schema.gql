@@ -1,0 +1,19 @@
+type Location @model{
+    id: ID
+    TenantId: String
+    EntityType: String
+    EntityId: String
+    Address: String
+    Buildings: [Building]
+}
+
+type Building{
+    id: ID
+    Name: String
+    Levels: [Level]
+}
+
+type Level{
+    id: ID
+    Name: String
+}
