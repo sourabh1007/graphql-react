@@ -5,7 +5,7 @@ import 'graphiql/graphiql.min.css';
 
 const fetcher: Fetcher = async graphQLParams => {
   const data = await fetch(
-    'https://swapi-graphql.netlify.app/.netlify/functions/index',
+    'data-api/graphql',
     {
       method: 'POST',
       headers: {
