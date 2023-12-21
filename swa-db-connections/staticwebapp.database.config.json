@@ -6,7 +6,7 @@
     "options": {
       "database": "graphqldb",
       "container": "planet",
-      "schema": "schema.gql"
+      "schema": "staticwebapp.database.schema.gql"
     }
   },
   "runtime": {
