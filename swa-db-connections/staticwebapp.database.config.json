@@ -79,6 +79,54 @@
                 }
             ]
         },
+        "CartItem": {
+            "source": {
+                "object": "ecommerce.cart"
+            },
+            "graphql": {
+                "enabled": true,
+                "type": {
+                    "singular": "cartItem",
+                    "plural": "cartItems"
+                }
+            },
+            "permissions": [
+                {
+                    "role": "anonymous",
+                    "actions": [
+                        {
+                            "action": "read"
+                        },
+                        {
+                            "action": "create"
+                        },
+                        {
+                            "action": "update"
+                        },
+                        {
+                            "action": "delete"
+                        }
+                    ]
+                },
+                {
+                    "role": "guest",
+                    "actions": [
+                        {
+                            "action": "read"
+                        },
+                        {
+                            "action": "create"
+                        },
+                        {
+                            "action": "update"
+                        },
+                        {
+                            "action": "delete"
+                        }
+                    ]
+                }
+            ]
+        },
         "User": {
             "source": {
                 "object": "ecommerce.users"
@@ -246,6 +294,56 @@
                 "type": {
                     "singular": "order",
                     "plural": "orders"
+                }
+            },
+            "permissions": [
+                {
+                    "role": "store_admin",
+                    "actions": [
+                        {
+                            "action": "read"
+                        },
+                        {
+                            "action": "create"
+                        },
+                        {
+                            "action": "update"
+                        }
+                    ]
+                },
+                {
+                    "role": "user",
+                    "actions": [
+                        {
+                            "action": "read"
+                        },
+                        {
+                            "action": "create"
+                        },
+                        {
+                            "action": "update"
+                        }
+                    ]
+                },
+                {
+                    "role": "order_operator",
+                    "actions": [
+                        {
+                            "action": "read"
+                        }
+                    ]
+                }
+            ]
+        },
+        "OrderItem": {
+            "source": {
+                "object": "ecommerce.order"
+            },
+            "graphql": {
+                "enabled": true,
+                "type": {
+                    "singular": "orderItem",
+                    "plural": "orderItems"
                 }
             },
             "permissions": [

@@ -1,7 +1,7 @@
 # GraphQL schema for an eCommerce site
 
 # Represents a product in the catalog
-type Product {
+type Product @model(name:"Product"){
     id: ID!
     name: String!
     description: String!
@@ -12,7 +12,7 @@ type Product {
 }
 
 # Represents a user in the system
-type User {
+type User @model(name:"User") {
     id: ID!
     name: String!
     email: String!
@@ -22,7 +22,7 @@ type User {
 }
 
 # Represents the shopping cart of a user
-type Cart {
+type Cart @model(name:"Cart") {
     id: ID!
     userId: ID!
     items: [CartItem!]!
@@ -36,10 +36,10 @@ type CartItem {
 }
 
 # Represents an order made by a user
-type Order {
+type Order @model(name:"Order") {
     id: ID!
     userId: ID!
-    items: [OrderItem!]!
+    items: [Product!]!
     totalAmount: Float!
     payment: Payment!
     status: String!
@@ -47,17 +47,16 @@ type Order {
 }
 
 # Represents an payment made by a user
-type Payment {
+type Payment @model(name:"Payment") {
     id: ID!
     userId: ID!
-    orderId: [OrderItem]
     amount: Float!
     status: String!
     paymentMethod: String!
 }
 
 # Represents an order made by a user
-type Monitoring {
+type Monitoring @model(name:"Monitoring") {
     id: ID!
     type: String!
     entity: String!
