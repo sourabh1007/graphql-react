@@ -1,4 +1,3 @@
-
 # GraphQL schema for an eCommerce site
 
 # Represents a product in the catalog
@@ -63,83 +62,4 @@ type Monitoring @model(name:"Monitoring") {
     entity: String!
     entityId: String!
     timestamp: String!
-type Character {
-    id : ID,
-    name : String,
-    type: String,
-    homePlanet: Int,
-    primaryFunction: String,
-    star: Star
-}
-
-type Planet @model(name:"PlanetAlias") {
-    id : ID!,
-    name : String,
-    character: Character,
-    age : Int,
-    dimension : String,
-    earth: Earth,
-    tags: [String!],
-    stars: [Star],
-    additionalAttributes: [AdditionalAttribute],
-    moons: [Moon],
-    suns: [Sun]
-}
-
-type Star {
-    id : ID,
-    name : String,
-    tag: Tag
-}
-
-type Tag {
-    id : ID,
-    name : String
-}
-
-type Moon {
-    id : ID,
-    name : String,
-    details : String,
-    moonAdditionalAttributes: [MoonAdditionalAttribute]
-}
-
-type Earth {
-    id : ID,
-    name : String,
-    type: String @authorize(roles: ["authenticated"])
-}
-
-type Sun {
-    id : ID,
-    name : String
-}
-
-type AdditionalAttribute {
-    id : ID,
-    name : String,
-    type: String
-}
-
-type MoonAdditionalAttribute {
-    id : ID,
-    name : String,
-    moreAttributes: [MoreAttribute!]
-}
-
-type MoreAttribute {
-    id : ID,
-    name : String,
-    type: String @authorize(roles: ["authenticated"])
-}
-
-type InvalidAuthModel @model @authorize(policy: "Crater") {
-    id : ID!,
-    name : String
-}
-
-type PlanetAgain @model {
-    id : ID,
-    name : String,
-    type: String @authorize(roles: ["authenticated"])
 }
